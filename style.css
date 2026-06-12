@@ -1,83 +1,135 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    color: #222;
+    background-color: #000;
+    color: #b30000;
 }
+
+/* Header */
 
 header img {
     width: 100%;
     height: 300px;
     object-fit: cover;
     display: block;
+    border-bottom: 2px solid #660000;
 }
 
+/* Navigation */
+
 nav {
-    background-color: #222;
-    padding: 15px;
+    background: linear-gradient(to bottom, #220000, #000000);
     text-align: center;
+    padding: 20px;
+    border-bottom: 2px solid #660000;
+    position: sticky;
+    top: 0;
 }
 
 nav a {
-    color: white;
+    color: #cc0000;
     text-decoration: none;
-    margin: 0 20px;
+    margin: 0 25px;
+    font-size: 1.1rem;
     font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
 }
 
 nav a:hover {
-    text-decoration: underline;
+    color: #ff3333;
+    text-shadow:
+        0 0 5px #ff0000,
+        0 0 10px #ff0000,
+        0 0 20px #990000;
 }
+
+/* Content */
 
 main {
-    max-width: 1000px;
-    margin: 30px auto;
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 20px;
 }
 
-h1, h2 {
+/* Titles */
+
+h1,
+h2 {
     text-align: center;
+    color: #ff3333;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
+
+/* Book Covers */
 
 .book-grid {
     display: flex;
     justify-content: center;
+    align-items: center;
+    gap: 40px;
     flex-wrap: wrap;
-    gap: 25px;
+    margin-top: 40px;
 }
 
 .book-grid img {
     width: 220px;
     height: 330px;
     object-fit: cover;
-    border-radius: 8px;
-    transition: transform 0.3s;
+    border: 2px solid #660000;
+    transition: all 0.3s ease;
 }
 
 .book-grid img:hover {
-    transform: scale(1.05);
+    transform: scale(1.08);
+    box-shadow:
+        0 0 15px #660000,
+        0 0 30px #330000;
 }
+
+/* About Page */
 
 .about-section {
     display: flex;
-    gap: 30px;
-    align-items: center;
-    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
 }
 
 .about-section img {
-    width: 250px;
-    border-radius: 10px;
+    width: 300px;
+    height: auto;
+    border: 2px solid #660000;
 }
+
+.about-section div {
+    max-width: 600px;
+    line-height: 1.8;
+}
+
+/* Lists */
 
 ul {
     line-height: 2;
 }
 
+ul a {
+    color: #cc0000;
+}
+
+ul a:hover {
+    color: #ff3333;
+}
+
+/* Footer */
+
 footer {
     text-align: center;
-    padding: 20px;
-    margin-top: 30px;
+    padding: 30px;
+    border-top: 1px solid #660000;
+    margin-top: 50px;
+    color: #770000;
 }
