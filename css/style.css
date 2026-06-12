@@ -5,7 +5,7 @@ body {
     color: #b30000;
 }
 
-/* Header */
+/* HEADER */
 
 header img {
     width: 100%;
@@ -15,7 +15,7 @@ header img {
     border-bottom: 2px solid #660000;
 }
 
-/* Navigation */
+/* NAVIGATION */
 
 nav {
     background: linear-gradient(to bottom, #220000, #000000);
@@ -24,6 +24,7 @@ nav {
     border-bottom: 2px solid #660000;
     position: sticky;
     top: 0;
+    z-index: 1000;
 }
 
 nav a {
@@ -45,7 +46,7 @@ nav a:hover {
         0 0 20px #990000;
 }
 
-/* Content */
+/* CONTENT AREA */
 
 main {
     max-width: 1100px;
@@ -53,17 +54,67 @@ main {
     padding: 20px;
 }
 
-/* Titles */
+/* HEADINGS (FIXED - no more conflicts) */
 
-h1,
-h2 {
+h1 {
     text-align: center;
     color: #ff3333;
     letter-spacing: 2px;
     text-transform: uppercase;
 }
 
-/* Book Covers */
+h2 {
+    color: #ff3333;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* BOOK PAGE LAYOUT */
+
+.book-entry {
+    display: flex;
+    align-items: flex-start;
+    gap: 50px;
+    margin-bottom: 80px;
+    flex-wrap: wrap;
+}
+
+.book-entry.reverse {
+    flex-direction: row-reverse;
+}
+
+.book-entry img {
+    width: 250px;
+    height: auto;
+    flex-shrink: 0;
+    border: 2px solid #660000;
+    transition: all 0.3s ease;
+}
+
+.book-entry img:hover {
+    transform: scale(1.05);
+    box-shadow:
+        0 0 15px #660000,
+        0 0 30px #330000;
+}
+
+/* TEXT NEXT TO BOOK */
+
+.book-info {
+    flex: 1;
+    min-width: 250px;
+}
+
+.book-info h2 {
+    text-align: left;
+    margin-top: 0;
+}
+
+.book-info p {
+    line-height: 1.8;
+}
+
+/* HOMEPAGE BOOK GRID (kept for other page) */
 
 .book-grid {
     display: flex;
@@ -89,7 +140,7 @@ h2 {
         0 0 30px #330000;
 }
 
-/* About Page */
+/* ABOUT PAGE */
 
 .about-section {
     display: flex;
@@ -97,6 +148,7 @@ h2 {
     justify-content: center;
     gap: 40px;
     margin-top: 40px;
+    flex-wrap: wrap;
 }
 
 .about-section img {
@@ -110,7 +162,7 @@ h2 {
     line-height: 1.8;
 }
 
-/* Lists */
+/* LISTS */
 
 ul {
     line-height: 2;
@@ -124,7 +176,7 @@ ul a:hover {
     color: #ff3333;
 }
 
-/* Footer */
+/* FOOTER */
 
 footer {
     text-align: center;
@@ -134,42 +186,22 @@ footer {
     color: #770000;
 }
 
-/* BOOK PAGE */
+/* MOBILE FIX */
 
-.book-entry {
-    display: flex;
-    align-items: center;
-    gap: 50px;
-    margin-bottom: 80px;
-}
+@media (max-width: 768px) {
 
-.book-entry.reverse {
-    flex-direction: row-reverse;
-}
+    .book-entry,
+    .book-entry.reverse {
+        flex-direction: column;
+        text-align: center;
+    }
 
-.book-entry img {
-    width: 250px;
-    height: auto;
-    border: 2px solid #660000;
-    transition: all 0.3s ease;
-}
+    .book-info h2 {
+        text-align: center;
+    }
 
-.book-entry img:hover {
-    transform: scale(1.05);
-    box-shadow:
-        0 0 15px #660000,
-        0 0 30px #330000;
-}
-
-.book-info {
-    flex: 1;
-}
-
-.book-info h2 {
-    text-align: left;
-    margin-top: 0;
-}
-
-.book-info p {
-    line-height: 1.8;
+    nav a {
+        display: inline-block;
+        margin: 10px 10px;
+    }
 }
