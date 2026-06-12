@@ -1,3 +1,4 @@
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -76,7 +77,7 @@ h2 {
 }
 
 /* =========================
-   BOOK PAGE (FIXED)
+   BOOK PAGE (AUTO ALTERNATING FIX)
 ========================= */
 
 .book-entry {
@@ -87,7 +88,8 @@ h2 {
     margin-bottom: 80px;
 }
 
-.book-entry.reverse {
+/* 🔥 AUTO ALTERNATING (NO HTML CLASS NEEDED) */
+.book-entry:nth-child(even) {
     flex-direction: row-reverse;
 }
 
@@ -237,13 +239,12 @@ footer {
 }
 
 /* =========================
-   MOBILE FIX (IMPORTANT)
+   MOBILE FIX
 ========================= */
 
 @media (max-width: 768px) {
 
-    .book-entry,
-    .book-entry.reverse {
+    .book-entry {
         flex-direction: column;
         text-align: center;
     }
