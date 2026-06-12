@@ -162,6 +162,38 @@ h2 {
     line-height: 1.8;
 }
 
+.contact-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin: 20px 0 50px 0;
+}
+
+.contact-bar a {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.contact-bar img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    border: 2px solid #660000;
+    border-radius: 10px;
+    padding: 5px;
+    background: #000;
+    transition: all 0.3s ease;
+}
+
+.contact-bar img:hover {
+    transform: scale(1.15);
+    box-shadow:
+        0 0 10px #660000,
+        0 0 20px #330000;
+    border-color: #ff3333;
+}
+
 /* LISTS */
 
 ul {
