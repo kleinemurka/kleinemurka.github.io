@@ -133,3 +133,43 @@ footer {
     margin-top: 50px;
     color: #770000;
 }
+
+/* BOOK PAGE */
+
+.book-entry {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 80px;
+}
+
+.book-entry.reverse {
+    flex-direction: row-reverse;
+}
+
+.book-entry img {
+    width: 250px;
+    height: auto;
+    border: 2px solid #660000;
+    transition: all 0.3s ease;
+}
+
+.book-entry img:hover {
+    transform: scale(1.05);
+    box-shadow:
+        0 0 15px #660000,
+        0 0 30px #330000;
+}
+
+.book-info {
+    flex: 1;
+}
+
+.book-info h2 {
+    text-align: left;
+    margin-top: 0;
+}
+
+.book-info p {
+    line-height: 1.8;
+}
