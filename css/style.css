@@ -1,9 +1,8 @@
-
 body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #000;
-    color: #b30000;
+    color: #ffffff;
 }
 
 /* =========================
@@ -61,23 +60,25 @@ main {
     padding: 20px;
 }
 
-/* HEADINGS */
+/* =========================
+   HEADINGS
+========================= */
 
 h1 {
     text-align: center;
-    color: #ff3333;
+    color: #a0a0a0;
     letter-spacing: 2px;
     text-transform: uppercase;
 }
 
 h2 {
-    color: #ff3333;
+    color: #a0a0a0;
     letter-spacing: 1px;
     text-transform: uppercase;
 }
 
 /* =========================
-   BOOK PAGE (AUTO ALTERNATING FIX)
+   BOOK PAGE
 ========================= */
 
 .book-entry {
@@ -88,7 +89,6 @@ h2 {
     margin-bottom: 80px;
 }
 
-/* 🔥 AUTO ALTERNATING (NO HTML CLASS NEEDED) */
 .book-entry:nth-child(even) {
     flex-direction: row-reverse;
 }
@@ -108,8 +108,6 @@ h2 {
         0 0 30px #330000;
 }
 
-/* TEXT NEXT TO BOOK */
-
 .book-info {
     flex: 1;
     min-width: 250px;
@@ -121,6 +119,7 @@ h2 {
 }
 
 .book-info p {
+    color: #ffffff;
     line-height: 1.8;
 }
 
@@ -174,6 +173,7 @@ h2 {
 .about-section div {
     max-width: 600px;
     line-height: 1.8;
+    color: #ffffff;
 }
 
 /* CONTACT BAR */
@@ -219,11 +219,20 @@ ul {
 }
 
 ul a {
-    color: #cc0000;
+    color: #ffffff;
+    text-decoration: none;
 }
 
 ul a:hover {
     color: #ff3333;
+}
+
+/* =========================
+   GENERAL PARAGRAPHS
+========================= */
+
+p {
+    color: #ffffff;
 }
 
 /* =========================
