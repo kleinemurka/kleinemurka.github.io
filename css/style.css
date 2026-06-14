@@ -50,6 +50,19 @@ nav a:hover {
         0 0 20px #990000;
 }
 
+/* CURRENT PAGE */
+
+nav a.active {
+    color: #ffffff;
+    background-color: #330000;
+    border: 1px solid #660000;
+    border-radius: 5px;
+    padding: 8px 12px;
+    box-shadow:
+        0 0 8px #660000,
+        0 0 15px #330000;
+}
+
 /* =========================
    MAIN CONTENT
 ========================= */
