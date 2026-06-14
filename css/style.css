@@ -12,6 +12,7 @@ body {
 .site-header {
     height: 25vh;
     min-height: 300px;
+    max-height: 600px;
 
     background-image: url("../images/header.png");
     background-position: center center;
