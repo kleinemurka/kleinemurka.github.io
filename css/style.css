@@ -275,9 +275,21 @@ footer {
         height: 250px;
     }
 
-    .book-entry {
+    .book-entry,
+    .book-entry:nth-child(even) {
         flex-direction: column;
+        align-items: center;
         text-align: center;
+        gap: 20px;
+    }
+
+    .book-entry img {
+        width: 220px;
+    }
+
+    .book-info {
+        width: 100%;
+        max-width: 600px;
     }
 
     .book-info h2 {
