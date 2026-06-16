@@ -74,7 +74,7 @@ nav a.active {
 
 main {
     max-width: 1100px;
-    margin: 40px auto;
+    margin: 20px auto 40px;
     padding: 20px;
 }
 
@@ -99,54 +99,21 @@ h2 {
    BOOK OVERVIEW PAGE
 ========================= */
 
+section {
+    margin-bottom: 80px;
+}
+
 .section-title {
     text-align: center;
     color: #888888;
-    margin-top: 80px;
-    margin-bottom: 50px;
+    font-size: 1.4rem;
     letter-spacing: 3px;
     text-transform: uppercase;
-    border-bottom: 1px solid #330000;
+
+    margin: 20px 0 40px;
     padding-bottom: 15px;
-}
 
-.book-entry {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    margin-bottom: 50px;
-    padding-bottom: 50px;
-    border-bottom: 1px solid #220000;
-}
-
-.book-entry img {
-    width: 180px;
-    height: auto;
-    border: 2px solid #660000;
-    transition: all 0.3s ease;
-}
-
-.book-entry img:hover {
-    transform: scale(1.05);
-    box-shadow:
-        0 0 15px #660000,
-        0 0 30px #330000;
-}
-
-.book-info {
-    flex: 1;
-}
-
-.book-info h3 {
-    color: #a0a0a0;
-    margin-top: 0;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.book-info p {
-    line-height: 1.8;
-    color: #ffffff;
+    border-bottom: 1px solid #330000;
 }
 
 /* =========================
@@ -158,15 +125,13 @@ h2 {
     gap: 60px;
     align-items: flex-start;
     justify-content: center;
-    margin-top: 20px;
 }
 
 .book-cover img {
     width: 320px;
     height: auto;
     border: 2px solid #660000;
-    box-shadow:
-        0 0 15px #330000;
+    box-shadow: 0 0 15px #330000;
 }
 
 .book-details {
@@ -176,6 +141,7 @@ h2 {
 
 .book-details h1 {
     text-align: left;
+    margin-top: 0;
 }
 
 .book-blurb {
@@ -233,7 +199,7 @@ h2 {
 }
 
 /* =========================
-   HOMEPAGE BOOK GRID
+   BOOK GRIDS
 ========================= */
 
 .book-grid {
@@ -242,7 +208,6 @@ h2 {
     align-items: center;
     gap: 40px;
     flex-wrap: wrap;
-    margin-top: 40px;
 }
 
 .book-grid img {
@@ -269,7 +234,6 @@ h2 {
     align-items: flex-start;
     justify-content: center;
     gap: 40px;
-    margin-top: 40px;
     flex-wrap: wrap;
 }
 
@@ -288,6 +252,14 @@ h2 {
 /* =========================
    CONTACT BAR
 ========================= */
+
+.contact-text {
+    margin-top: 40px;
+    margin-bottom: 15px;
+    color: #888888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
 
 .contact-bar {
     display: flex;
@@ -321,14 +293,6 @@ h2 {
     border-color: #ff3333;
 }
 
-.contact-text {
-    margin-top: 40px;
-    margin-bottom: 15px;
-    color: #888888;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
 /* =========================
    LISTS
 ========================= */
@@ -347,7 +311,7 @@ ul a:hover {
 }
 
 /* =========================
-   GENERAL PARAGRAPHS
+   GENERAL TEXT
 ========================= */
 
 p {
@@ -377,11 +341,6 @@ footer {
         min-height: auto;
     }
 
-    .book-entry {
-        flex-direction: column;
-        text-align: center;
-    }
-
     .book-page {
         flex-direction: column;
         align-items: center;
@@ -394,6 +353,10 @@ footer {
 
     .book-details h1 {
         text-align: center;
+    }
+
+    .contact-bar {
+        justify-content: center;
     }
 
     nav a {
