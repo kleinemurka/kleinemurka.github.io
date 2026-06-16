@@ -131,14 +131,27 @@ h2 {
     min-width: 250px;
 }
 
-.book-info h2 {
-    text-align: left;
+.book-info h3 {
+    color: #a0a0a0;
     margin-top: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .book-info p {
     color: #ffffff;
     line-height: 1.8;
+}
+/* SECTION HEADINGS */
+.section-title {
+    text-align: center;
+    color:#888888;
+    margin-top: 80px;
+    margin-bottom: 50px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    border-bottom: 1px solid #330000;
+    padding-bottom: 15px;
 }
 
 /* =========================
