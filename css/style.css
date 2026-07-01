@@ -1,8 +1,48 @@
+/* =========================
+   DESIGN TOKENS
+========================= */
+
+:root {
+    --bg: #000;
+    --text: #ffffff;
+    --muted: #888888;
+
+    --accent: #660000;
+    --accent-dark: #330000;
+    --accent-hover: #ff3333;
+
+    --panel: rgba(20, 0, 0, 0.25);
+}
+
+/* =========================
+   BASE / STICKY FOOTER SETUP
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #000;
-    color: #ffffff;
+    background: var(--bg);
+    color: var(--text);
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* makes footer stick */
+main {
+    flex: 1;
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 /* =========================
@@ -14,12 +54,9 @@ body {
     min-height: 300px;
     max-height: 600px;
 
-    background-image: url("../images/header.png");
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background: url("../images/header.png") center/cover no-repeat;
 
-    border-bottom: 2px solid #660000;
+    border-bottom: 2px solid var(--accent);
 }
 
 /* =========================
@@ -27,76 +64,77 @@ body {
 ========================= */
 
 nav {
-    background: linear-gradient(to bottom, #220000, #000000);
-    text-align: center;
-    padding: 20px;
-    border-bottom: 2px solid #660000;
     position: sticky;
     top: 0;
     z-index: 1000;
+
+    text-align: center;
+    padding: 20px;
+
+    background: linear-gradient(to bottom, #220000, #000);
+
+    border-bottom: 2px solid var(--accent);
 }
 
 nav a {
     color: #cc0000;
     text-decoration: none;
-    margin: 0 25px;
+
+    margin: 0 20px;
+
     font-size: 1.1rem;
     font-weight: bold;
-    letter-spacing: 1px;
     text-transform: uppercase;
-    transition: all 0.3s ease;
+
+    transition: 0.3s ease;
 }
 
 nav a:hover {
-    color: #ff3333;
-    text-shadow:
-        0 0 5px #ff0000,
-        0 0 10px #ff0000,
-        0 0 20px #990000;
+    color: var(--accent-hover);
+    text-shadow: 0 0 10px #ff0000;
 }
-
-/* CURRENT PAGE */
 
 nav a.active {
-    color: #ffffff;
-    background-color: #330000;
-    border: 1px solid #660000;
-    border-radius: 5px;
+    color: #fff;
+    background: var(--accent-dark);
     padding: 8px 12px;
-    box-shadow:
-        0 0 8px #660000,
-        0 0 15px #330000;
+    border-radius: 5px;
+    border: 1px solid var(--accent);
 }
 
 /* =========================
-   MAIN CONTENT
+   TYPOGRAPHY
 ========================= */
 
-main {
-    max-width: 1100px;
-    margin: 20px auto 40px;
-    padding: 20px;
+h1, h2 {
+    color: #a0a0a0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
-
-/* =========================
-   HEADINGS
-========================= */
 
 h1 {
     text-align: center;
-    color: #a0a0a0;
-    letter-spacing: 2px;
-    text-transform: uppercase;
 }
 
-h2 {
-    color: #a0a0a0;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+p {
+    color: var(--text);
+}
+
+ul {
+    line-height: 2;
+}
+
+ul a {
+    color: var(--text);
+    text-decoration: none;
+}
+
+ul a:hover {
+    color: var(--accent-hover);
 }
 
 /* =========================
-   BOOK OVERVIEW PAGE
+   SECTIONS
 ========================= */
 
 section {
@@ -105,19 +143,45 @@ section {
 
 .section-title {
     text-align: center;
-    color: #888888;
+    color: var(--muted);
+
     font-size: 1.4rem;
     letter-spacing: 3px;
-    text-transform: uppercase;
 
     margin: 20px 0 40px;
     padding-bottom: 15px;
 
-    border-bottom: 1px solid #330000;
+    border-bottom: 1px solid var(--accent-dark);
 }
 
 /* =========================
-   INDIVIDUAL BOOK PAGE
+   BOOK GRID
+========================= */
+
+.book-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.book-grid img {
+    width: 220px;
+    height: 330px;
+    object-fit: cover;
+
+    border: 2px solid var(--accent);
+
+    transition: 0.3s ease;
+}
+
+.book-grid img:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 25px var(--accent-dark);
+}
+
+/* =========================
+   BOOK PAGE
 ========================= */
 
 .book-page {
@@ -129,9 +193,8 @@ section {
 
 .book-cover img {
     width: 320px;
-    height: auto;
-    border: 2px solid #660000;
-    box-shadow: 0 0 15px #330000;
+    border: 2px solid var(--accent);
+    box-shadow: 0 0 15px var(--accent-dark);
 }
 
 .book-details {
@@ -141,106 +204,62 @@ section {
 
 .book-details h1 {
     text-align: left;
-    margin-top: 0;
 }
 
 .book-blurb {
     line-height: 1.9;
-    font-size: 1.05rem;
-    margin-top: 25px;
-    margin-bottom: 40px;
+    margin: 25px 0 40px;
 }
 
 /* =========================
-   AVAILABLE ON BUTTONS
+   BUTTONS
 ========================= */
-
-.buy-links {
-    margin-top: 30px;
-}
 
 .buy-links span {
     display: block;
     margin-bottom: 15px;
-    color: #888888;
+    color: var(--muted);
     text-transform: uppercase;
-    letter-spacing: 1px;
 }
 
 .buy-links a {
     display: inline-block;
+
     padding: 12px 20px;
-    margin-right: 12px;
-    margin-bottom: 12px;
+    margin: 5px;
 
+    color: var(--text);
     text-decoration: none;
-    color: #ffffff;
 
-    border: 1px solid #660000;
+    border: 1px solid var(--accent);
     border-radius: 6px;
 
-    background: linear-gradient(
-        to bottom,
-        #330000,
-        #110000
-    );
+    background: linear-gradient(to bottom, #330000, #110000);
 
-    transition: all 0.3s ease;
+    transition: 0.3s ease;
 }
 
 .buy-links a:hover {
     transform: translateY(-2px);
-
-    border-color: #ff3333;
-
-    box-shadow:
-        0 0 10px #660000,
-        0 0 20px #330000;
+    border-color: var(--accent-hover);
+    box-shadow: 0 0 20px var(--accent-dark);
 }
 
 /* =========================
-   BOOK GRIDS
-========================= */
-
-.book-grid {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-    flex-wrap: wrap;
-}
-
-.book-grid img {
-    width: 220px;
-    height: 330px;
-    object-fit: cover;
-    border: 2px solid #660000;
-    transition: all 0.3s ease;
-}
-
-.book-grid img:hover {
-    transform: scale(1.08);
-    box-shadow:
-        0 0 15px #660000,
-        0 0 30px #330000;
-}
-
-/* =========================
-   ABOUT PAGE
+   ABOUT
 ========================= */
 
 .about-section {
     display: flex;
-    align-items: flex-start;
-    justify-content: center;
     gap: 40px;
     flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
 }
 
 .about-section img {
     width: 300px;
-    height: auto;
-    border: 2px solid #660000;
+    border: 2px solid var(--accent);
 }
 
 .about-section div {
@@ -249,255 +268,104 @@ section {
 }
 
 /* =========================
-   CONTACT BAR
+   CONTACT
 ========================= */
 
 .contact-text {
     margin-top: 40px;
-    margin-bottom: 15px;
-    color: #888888;
+    color: var(--muted);
     text-transform: uppercase;
-    letter-spacing: 1px;
 }
 
 .contact-bar {
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
     gap: 25px;
-    margin-top: 10px;
-}
-
-.contact-bar a {
-    display: inline-block;
-    transition: transform 0.3s ease;
 }
 
 .contact-bar img {
     width: 60px;
     height: 60px;
-    object-fit: contain;
-    border: 2px solid #660000;
-    border-radius: 10px;
+
     padding: 5px;
+
+    border: 2px solid var(--accent);
+    border-radius: 10px;
+
     background: #000;
-    transition: all 0.3s ease;
+
+    transition: 0.3s ease;
 }
 
 .contact-bar img:hover {
     transform: scale(1.15);
-    box-shadow:
-        0 0 10px #660000,
-        0 0 20px #330000;
-    border-color: #ff3333;
+    border-color: var(--accent-hover);
+    box-shadow: 0 0 20px var(--accent-dark);
 }
 
 /* =========================
-   LISTS
-========================= */
-
-ul {
-    line-height: 2;
-}
-
-ul a {
-    color: #ffffff;
-    text-decoration: none;
-}
-
-ul a:hover {
-    color: #ff3333;
-}
-
-/* =========================
-   GENERAL TEXT
-========================= */
-
-p {
-    color: #ffffff;
-}
-
-/* =========================
-   FOOTER
+   FOOTER (STICKY FIX)
 ========================= */
 
 footer {
     text-align: center;
     padding: 30px;
-    border-top: 1px solid #660000;
-    margin-top: auto;
+
+    border-top: 1px solid var(--accent);
+
     color: #770000;
+    margin-top: auto;
 }
+
 /* =========================
-   PLAYLIST PAGE
+   PLAYLIST / DETAILS
 ========================= */
 
 .playlist-intro {
     text-align: center;
-    color: #aaaaaa;
+    color: #aaa;
     max-width: 850px;
     margin: 0 auto 60px;
     line-height: 1.8;
 }
 
-
 /* =========================
-   BOOK SPOILERS
-========================= */
-
-.book-playlist {
-
-    width: 100%;
-
-    margin: 60px 0;
-
-    border: none;
-
-    background: none;
-
-    box-shadow: none;
-}
-
-.book-playlist summary {
-
-    cursor: pointer;
-
-    padding: 22px 30px;
-
-    background: linear-gradient(to bottom, #220000, #080808);
-
-    border-top: 2px solid #660000;
-    border-bottom: 2px solid #660000;
-
-    color: #dddddd;
-
-    font-size: 1.4rem;
-
-    font-weight: bold;
-
-    letter-spacing: 4px;
-
-    text-transform: uppercase;
-
-    transition: .3s ease;
-
-    margin: 0;
-}
-
-.book-playlist summary:hover {
-
-    background: linear-gradient(to bottom, #330000, #111111);
-
-    color: #ff3333;
-
-}
-
-.book-playlist[open] summary {
-    box-shadow: 0 0 15px #220000;
-}
-
-
-/* =========================
-   SONG ENTRY
+   SONG ENTRIES
 ========================= */
 
 .song-entry {
-
     display: flex;
-
-    align-items: flex-start;
-
     gap: 40px;
 
     padding: 30px 25px;
-
     margin: 25px 0;
 
-    background: rgba(20, 0, 0, 0.25);
+    background: var(--panel);
 
-    border-left: 3px solid #660000;
+    border-left: 3px solid var(--accent);
 
-    border-radius: 6px;
-
-    transition: all 0.3s ease;
+    transition: 0.3s ease;
 }
 
 .song-entry:hover {
-
     background: rgba(30, 0, 0, 0.35);
-
-    border-left-color: #ff3333;
-
+    border-left-color: var(--accent-hover);
 }
 
-
-/* =========================
-   VIDEO
-========================= */
-
 .song-video {
-
     width: 340px;
-
     flex-shrink: 0;
 }
 
 .song-video iframe {
-
     width: 100%;
-
     aspect-ratio: 16 / 9;
 
-    border: 2px solid #660000;
-
+    border: 2px solid var(--accent);
     border-radius: 6px;
-
-    background: #000;
-
-    box-shadow:
-        0 0 12px #220000;
 }
-
 
 /* =========================
-   NOTES
-========================= */
-
-.song-note {
-
-    flex: 1;
-}
-
-.song-note h2 {
-
-    margin: 0 0 18px;
-
-    color: #cccccc;
-
-    letter-spacing: 2px;
-
-    text-transform: uppercase;
-}
-
-.song-note p {
-
-    margin: 0;
-
-    color: #dddddd;
-
-    line-height: 1.9;
-}
-html {
-    height: 100%;
-}
-
-body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-/* =========================
-   MOBILE FIX
+   MOBILE
 ========================= */
 
 @media (max-width: 768px) {
@@ -509,12 +377,8 @@ body {
 
     .book-page {
         flex-direction: column;
-        align-items: center;
         text-align: center;
-    }
-
-    .book-cover img {
-        width: min(320px, 80vw);
+        align-items: center;
     }
 
     .book-details h1 {
@@ -531,30 +395,17 @@ body {
     }
 
     .song-entry {
-
         flex-direction: column;
-
         gap: 20px;
-
-        padding: 25px 15px;
-
     }
 
     .song-video {
-
         width: 100%;
-
         display: flex;
-
         justify-content: center;
-
     }
 
     .song-video iframe {
-
-        width: 100%;
-
         max-width: 340px;
-
     }
 }
