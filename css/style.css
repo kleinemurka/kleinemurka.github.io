@@ -73,7 +73,7 @@ nav a.active {
 ========================= */
 
 main {
-    max-width: 1100px;
+    max-width: 1400px;
     margin: 20px auto 40px;
     padding: 20px;
 }
@@ -328,7 +328,150 @@ footer {
     margin-top: 50px;
     color: #770000;
 }
+/* =========================
+   PLAYLIST PAGE
+========================= */
 
+.playlist-intro {
+    text-align: center;
+    color: #aaaaaa;
+    max-width: 800px;
+    margin: 0 auto 50px;
+    line-height: 1.8;
+}
+
+/* BOOK SPOILERS */
+
+.book-playlist {
+
+    margin-bottom: 35px;
+
+    border: 1px solid #660000;
+    border-radius: 8px;
+
+    background: linear-gradient(
+        to bottom,
+        #120000,
+        #050505
+    );
+
+    overflow: hidden;
+
+    box-shadow:
+        0 0 12px #110000;
+}
+
+.book-playlist summary {
+
+    cursor: pointer;
+
+    padding: 18px 25px;
+
+    color: #cccccc;
+
+    font-size: 1.2rem;
+    font-weight: bold;
+
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    transition: all .3s ease;
+}
+
+.book-playlist summary:hover {
+
+    color: #ff3333;
+    background: #180000;
+}
+
+.book-playlist[open] summary {
+
+    border-bottom: 1px solid #330000;
+}
+
+
+/* SONG CARD */
+
+.song-entry {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 40px;
+
+    padding: 25px;
+
+    margin: 25px;
+
+    border: 1px solid #220000;
+    border-radius: 8px;
+
+    background: rgba(25, 0, 0, 0.35);
+
+    transition: all .3s ease;
+}
+
+.song-entry:hover {
+
+    border-color: #660000;
+
+    box-shadow:
+        0 0 12px #220000;
+}
+
+
+/* VIDEO */
+
+.song-video {
+
+    flex: 0 0 340px;
+}
+
+.song-video iframe {
+
+    width: 340px;
+    height: 191px;
+
+    border: 2px solid #660000;
+    border-radius: 6px;
+
+    background: #000;
+
+    box-shadow:
+        0 0 10px #220000;
+}
+
+
+/* NOTES */
+
+.song-note {
+
+    flex: 1;
+
+    min-width: 0;
+}
+
+.song-note h2 {
+
+    margin-top: 0;
+    margin-bottom: 15px;
+
+    color: #cccccc;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+.song-note p {
+
+    margin: 0;
+
+    color: #dddddd;
+
+    line-height: 1.9;
+}
 /* =========================
    MOBILE FIX
 ========================= */
@@ -362,76 +505,31 @@ footer {
         display: inline-block;
         margin: 10px;
     }
+    .song-entry {
 
-    /* =========================
-    PLAYLIST SECTION
-    ========================= */
+        flex-direction: column;
 
-    .playlist-section {
-        margin-top: 50px;
+        margin: 20px;
 
-        border: 1px solid #660000;
-        border-radius: 8px;
-
-        background: linear-gradient(
-            to bottom,
-            #110000,
-            #050505
-        );
-
-        overflow: hidden;
-
-        box-shadow:
-            0 0 10px rgba(102, 0, 0, 0.4);
+        gap: 20px;
     }
 
-    .playlist-section summary {
-        cursor: pointer;
+    .song-video {
 
-        padding: 18px 20px;
+        display: flex;
 
-        color: #cc0000;
+        justify-content: center;
 
-        font-weight: bold;
-        font-size: 1rem;
-
-        letter-spacing: 2px;
-        text-transform: uppercase;
-
-        transition: all 0.3s ease;
+        flex: auto;
     }
 
-    .playlist-section summary:hover {
-        color: #ff3333;
+    .song-video iframe {
 
-        text-shadow:
-            0 0 5px #660000,
-            0 0 10px #660000;
-    }
-
-    .playlist-section[open] summary {
-        border-bottom: 1px solid #330000;
-    }
-
-    .playlist-text {
-        padding: 20px 20px 10px;
-
-        color: #bbbbbb;
-
-        line-height: 1.8;
-    }
-
-    .playlist-video {
-        padding: 0 20px 20px;
-    }
-
-    .playlist-video iframe {
         width: 100%;
+        max-width: 340px;
+
+        height: auto;
+
         aspect-ratio: 16 / 9;
-
-        border: 1px solid #660000;
-        border-radius: 6px;
-
-        background: #000;
     }
 }
